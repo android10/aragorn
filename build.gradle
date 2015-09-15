@@ -13,6 +13,9 @@ allprojects {
   }
 }
 
+def buildSrcDir = 'buildsystem'
+apply from: "${buildSrcDir}/inject.gradle"
+
 task wrapper(type: Wrapper) {
   gradleVersion = project.gradleVersion
 }

@@ -1,16 +1,4 @@
-apply plugin: 'java'
 apply plugin: 'application'
-
-//noinspection GroovyUnusedAssignment
-targetCompatibility = JavaVersion.VERSION_1_8
-//noinspection GroovyUnusedAssignment
-sourceCompatibility = JavaVersion.VERSION_1_8
-
-dependencies {
-  compile project(':aragorn-library')
-  compile "io.reactivex:rxjava:$project.rxJavaVersion"
-}
-
 //noinspection GroovyUnusedAssignment
 mainClassName = "com.fernandocejas.sample.aragorn.Main"
 run {
@@ -18,4 +6,9 @@ run {
     //noinspection GroovyAssignabilityCheck
     args Eval.me(sampleArgs)
   }
+}
+
+dependencies {
+  compile project(':aragorn-library')
+  compile "io.reactivex:rxjava:$project.rxJavaVersion"
 }
