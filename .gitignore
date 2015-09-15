@@ -2,5 +2,7 @@
 .idea
 *.iml
 build
+out
 .gradletasknamecache
 local.properties
+
