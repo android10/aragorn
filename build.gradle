@@ -19,20 +19,20 @@ task wrapper(type: Wrapper) {
 
 task runSingleSample(type: Exec) {
   description = 'Runs a sample showing how @RxLogSingle annotation works.'
-  commandLine "./gradlew", "clean", "run", "-PsampleArgs=Single"
+  commandLine "./gradlew", "clean", "run", "-PsampleArgs='Single'"
 }
 
 task runObservableSample(type: Exec) {
   description = 'Runs a sample showing how @RxLogObservable annotation works.'
-  commandLine "./gradlew", "clean", "run", "-PsampleArgs=Observable"
+  commandLine "./gradlew", "clean", "run", "-PsampleArgs='Observable'"
 }
 
 task runSubscriberSample(type: Exec) {
   description = 'Runs a sample showing how @RxLogSubscriber annotation works.'
-  commandLine "./gradlew", "clean", "run", "-PsampleArgs=Subscriber"
+  commandLine "./gradlew", "clean", "run", "-PsampleArgs='Subscriber'"
 }
 
 task runObserverSample(type: Exec) {
   description = 'Runs a sample showing how @RxLogObserver annotation works.'
-  commandLine "./gradlew", "clean", "run", "-PsampleArgs=Observer"
+  commandLine "./gradlew", "clean", "run", "-PsampleArgs='Observer'"
 }

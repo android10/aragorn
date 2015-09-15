@@ -6,9 +6,6 @@ targetCompatibility = JavaVersion.VERSION_1_8
 //noinspection GroovyUnusedAssignment
 sourceCompatibility = JavaVersion.VERSION_1_8
 
-sourceSets.main.java.srcDirs = ['src']
-sourceSets.test.java.srcDirs = ['src']
-
 dependencies {
   compile project(':aragorn-library')
   compile "io.reactivex:rxjava:$project.rxJavaVersion"
@@ -17,8 +14,8 @@ dependencies {
 //noinspection GroovyUnusedAssignment
 mainClassName = "com.fernandocejas.sample.aragorn.Main"
 run {
-  if (project.hasProperty("sample")) {
+  if (project.hasProperty("sampleArgs")) {
     //noinspection GroovyAssignabilityCheck
-    args Eval.me("sample")
+    args Eval.me(sampleArgs)
   }
 }
