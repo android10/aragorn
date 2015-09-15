@@ -1,8 +1,20 @@
-[":aragorn-sample", ":aragorn-library"].each { name ->
-  project(name) {
-    apply plugin: 'java'
+allprojects {
+  apply plugin: 'java'
 
-    targetCompatibility = JavaVersion.VERSION_1_7
-    sourceCompatibility = JavaVersion.VERSION_1_7
+  targetCompatibility = JavaVersion.VERSION_1_7
+  sourceCompatibility = JavaVersion.VERSION_1_7
+
+  buildscript {
+    repositories {
+      mavenLocal()
+      mavenCentral()
+      jcenter()
+    }
+  }
+
+  repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
   }
 }
