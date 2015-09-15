@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+//noinspection GroovyUnusedAssignment
+targetCompatibility = JavaVersion.VERSION_1_8
+//noinspection GroovyUnusedAssignment
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+
+dependencies {
+  compile project(':aragorn-library')
+  compile "io.reactivex:rxjava:$project.rxJavaVersion"
+}

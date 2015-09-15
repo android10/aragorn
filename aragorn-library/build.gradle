@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+//noinspection GroovyUnusedAssignment
+targetCompatibility = JavaVersion.VERSION_1_7
+//noinspection GroovyUnusedAssignment
+sourceCompatibility = JavaVersion.VERSION_1_7
+
+dependencies {
+  compile "io.reactivex:rxjava:$project.rxJavaVersion"
+  compile "com.google.android:android:${project.androidVersion}"
+
+  testCompile "junit:junit:$project.junitVersion"
+  testCompile "org.assertj:assertj-core:$project.assertJVersion"
+  testCompile "org.mockito:mockito-core:$project.mockitoVersion"
+  testCompile "com.google.testing.compile:compile-testing:$project.compileTestingVersion"
+}
