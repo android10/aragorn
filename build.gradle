@@ -6,21 +6,28 @@ task wrapper(type: Wrapper) {
 }
 
 task runSingleSample(type: Exec) {
-  description = 'Runs a sample showing how @RxLogSingle annotation works.'
-  commandLine "./gradlew", "clean", "run", "-PsampleArgs='Single'"
+  description = 'Run a sample showing how @RxLogSingle annotation works.'
+  commandLine "./gradlew", "run", "-PsampleArgs='Single'"
 }
 
 task runObservableSample(type: Exec) {
-  description = 'Runs a sample showing how @RxLogObservable annotation works.'
-  commandLine "./gradlew", "clean", "run", "-PsampleArgs='Observable'"
+  description = 'Run a sample showing how @RxLogObservable annotation works.'
+  commandLine "./gradlew", "run", "-PsampleArgs='Observable'"
 }
+runObservableSample.shouldRunAfter('runSingleSample')
 
 task runSubscriberSample(type: Exec) {
-  description = 'Runs a sample showing how @RxLogSubscriber annotation works.'
-  commandLine "./gradlew", "clean", "run", "-PsampleArgs='Subscriber'"
+  description = 'Run a sample showing how @RxLogSubscriber annotation works.'
+  commandLine "./gradlew", "run", "-PsampleArgs='Subscriber'"
 }
+runSubscriberSample.shouldRunAfter('runObservableSample')
 
 task runObserverSample(type: Exec) {
-  description = 'Runs a sample showing how @RxLogObserver annotation works.'
-  commandLine "./gradlew", "clean", "run", "-PsampleArgs='Observer'"
+  description = 'Run a sample showing how @RxLogObserver annotation works.'
+  commandLine "./gradlew", "run", "-PsampleArgs='Observer'"
+}
+runObserverSample.shouldRunAfter('runSubscriberSample')
+
+task executeAllSamples(dependsOn: ['runSingleSample', 'runObservableSample', 'runSubscriberSample', 'runObserverSample']) {
+  description = 'Run all samples for all the annotations available within Aragorn.'
 }
