@@ -6,21 +6,23 @@ public class Main {
     }
 
     private static void executeSample(String sampleName) {
+        Sample sample;
         switch (sampleName) {
             case "Single":
-                System.out.print("Hello Single");
+                sample = new SingleSample();
                 break;
             case "Observable":
-                System.out.print("Hello Observable");
+                sample = new ObservableSample();
                 break;
             case "Subscriber":
-                System.out.print("Hello Subscriber");
+                sample = new SubscriberSample();
                 break;
             case "Observer":
-                System.out.print("Hello Observer");
+                sample = new ObserverSample();
                 break;
             default:
                 throw new IllegalArgumentException("Wrong parameter name for Sample");
         }
+        sample.execute();
     }
 }

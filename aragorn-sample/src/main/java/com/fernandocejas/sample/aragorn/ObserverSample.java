@@ -1,6 +1,6 @@
 package com.fernandocejas.sample.aragorn;
 
-class ObservableSample implements Sample {
+public class ObserverSample implements Sample {
     @Override
     public void execute() {
 
