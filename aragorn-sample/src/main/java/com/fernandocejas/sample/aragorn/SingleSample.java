@@ -11,7 +11,12 @@ import java.util.List;
 
 class SingleSample extends Sample {
     @Override
-    public void execute() {
+    String getSampleName() {
+        return "Single Sample";
+    }
+
+    @Override
+    public void executeSample() {
         stringList()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(Schedulers.immediate())

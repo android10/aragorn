@@ -7,7 +7,12 @@ import rx.schedulers.Schedulers;
 
 class ObserverSample extends Sample {
     @Override
-    public void execute() {
+    String getSampleName() {
+        return "Observer Sample";
+    }
+
+    @Override
+    public void executeSample() {
         strings()
                 .onBackpressureDrop()
                 .subscribeOn(Schedulers.newThread())

@@ -10,7 +10,12 @@ import java.util.List;
 
 class ObservableSample extends Sample {
     @Override
-    public void execute() {
+    String getSampleName() {
+        return "Observable Sample";
+    }
+
+    @Override
+    public void executeSample() {
         dummyClassList()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(Schedulers.immediate())

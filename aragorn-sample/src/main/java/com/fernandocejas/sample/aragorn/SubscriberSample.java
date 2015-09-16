@@ -7,7 +7,12 @@ import rx.schedulers.Schedulers;
 
 class SubscriberSample extends Sample {
     @Override
-    public void execute() {
+    String getSampleName() {
+        return "Subscriber Sample";
+    }
+
+    @Override
+    public void executeSample() {
         numbersWithBackPressure()
                 .onBackpressureDrop()
                 .subscribeOn(Schedulers.newThread())
