@@ -1,5 +1,5 @@
 package com.fernandocejas.sample.aragorn;
 
-public interface Sample {
-    void execute();
+abstract class Sample {
+    abstract void execute();
 }
