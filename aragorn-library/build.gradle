@@ -1,6 +1,7 @@
 dependencies {
   compile "io.reactivex:rxjava:$project.rxJavaVersion"
-  compile "com.google.android:android:${project.androidVersion}"
+  compile "com.google.android:android:$project.androidVersion"
+  compile "com.squareup:javapoet:$project.javaPoetVersion"
 
   testCompile "junit:junit:$project.junitVersion"
   testCompile "org.assertj:assertj-core:$project.assertJVersion"
