@@ -2,6 +2,7 @@ package com.fernandocejas.sample.aragorn;
 
 import com.fernandocejas.aragorn.annotation.RxLogObservable;
 import rx.Observable;
+import rx.Subscriber;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
@@ -29,9 +30,19 @@ class ObservableSample extends Sample {
         dummyClassListError()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(Schedulers.immediate())
-                .subscribe(new Action1<List<MyDummyClass>>() {
+                .subscribe(new Subscriber<List<MyDummyClass>>() {
                     @Override
-                    public void call(List<ObservableSample.MyDummyClass> myDummyClasses) {
+                    public void onCompleted() {
+                        //empty
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        //empty
+                    }
+
+                    @Override
+                    public void onNext(List<MyDummyClass> myDummyClasses) {
                         //empty
                     }
                 });
