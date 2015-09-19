@@ -7,3 +7,5 @@ out
 local.properties
 .java-version
 
+.DS_Store
+*.DS_Store
