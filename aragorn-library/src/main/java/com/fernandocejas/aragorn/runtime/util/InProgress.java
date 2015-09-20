@@ -5,5 +5,5 @@ package com.fernandocejas.aragorn.runtime.util;
  * A string value can be used for more information, such as a url or a description.
  */
 public @interface InProgress {
-    String value() default "";
+  String value() default "";
 }

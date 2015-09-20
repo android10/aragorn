@@ -8,14 +8,14 @@ import static com.fernandocejas.aragorn.runtime.util.Todo.Severity.TRIVIAL;
  * A {@link Todo.Severity} value can be used to describe the TODO purpose.
  */
 public @interface Todo {
-    String value() default "";
+  String value() default "";
 
-    Severity severity() default TRIVIAL;
+  Severity severity() default TRIVIAL;
 
-    /**
-     * Severity description.
-     */
-    enum Severity {
-        TRIVIAL, IMPORTANT, CRITICAL, DOCUMENTATION
-    }
+  /**
+   * Severity description.
+   */
+  enum Severity {
+    TRIVIAL, IMPORTANT, CRITICAL, DOCUMENTATION
+  }
 }

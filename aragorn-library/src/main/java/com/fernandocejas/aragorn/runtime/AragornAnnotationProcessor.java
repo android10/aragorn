@@ -16,31 +16,32 @@ import javax.lang.model.element.TypeElement;
 @AutoService(Processor.class)
 @SupportedSourceVersion(SourceVersion.RELEASE_7)
 public class AragornAnnotationProcessor extends AbstractProcessor {
-    private final AnnotationHandler.Factory annotationHandlerFactory;
+  private final AnnotationHandler.Factory annotationHandlerFactory;
 
-    public AragornAnnotationProcessor() {
-        super();
-        this.annotationHandlerFactory = new AnnotationHandler.Factory();
-    }
+  public AragornAnnotationProcessor() {
+    super();
+    this.annotationHandlerFactory = new AnnotationHandler.Factory();
+  }
 
-    @VisibleForTesting
-    AragornAnnotationProcessor(AnnotationHandler.Factory annotationHandlerFactory) {
-        this.annotationHandlerFactory = annotationHandlerFactory;
-    }
+  @VisibleForTesting AragornAnnotationProcessor(
+      AnnotationHandler.Factory annotationHandlerFactory) {
+    this.annotationHandlerFactory = annotationHandlerFactory;
+  }
 
-    @Override public Set<String> getSupportedAnnotationTypes() {
-        return this.annotationHandlerFactory.getSupportedAnnotationTypes();
-    }
+  @Override public Set<String> getSupportedAnnotationTypes() {
+    return this.annotationHandlerFactory.getSupportedAnnotationTypes();
+  }
 
-    @Override public boolean process(Set<? extends TypeElement> typeElements, RoundEnvironment roundEnvironment) {
-        for (Class<? extends Annotation> annotation : this.annotationHandlerFactory.getSupportedAnnotationClasses()) {
-            for (Element element : roundEnvironment.getElementsAnnotatedWith(annotation)) {
-                AnnotationHandler annotationHandler = this.annotationHandlerFactory.create(annotation);
-                if (annotationHandler != null) {
-                    annotationHandler.process(processingEnv, element);
-                }
-            }
+  @Override public boolean process(Set<? extends TypeElement> typeElements,
+      RoundEnvironment roundEnvironment) {
+    for (Class<? extends Annotation> annotation : this.annotationHandlerFactory.getSupportedAnnotationClasses()) {
+      for (Element element : roundEnvironment.getElementsAnnotatedWith(annotation)) {
+        AnnotationHandler annotationHandler = this.annotationHandlerFactory.create(annotation);
+        if (annotationHandler != null) {
+          annotationHandler.process(processingEnv, element);
         }
-        return true;
+      }
     }
+    return true;
+  }
 }

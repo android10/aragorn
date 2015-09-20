@@ -7,6 +7,6 @@ import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.CLASS;
 
 @Retention(CLASS)
-@Target({METHOD})
+@Target({ METHOD })
 public @interface RxLogSingle {
 }

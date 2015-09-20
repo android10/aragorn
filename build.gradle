@@ -28,6 +28,7 @@ task runObserverSample(type: Exec) {
 }
 runObserverSample.shouldRunAfter('runSubscriberSample')
 
-task executeAllSamples(dependsOn: ['runSingleSample', 'runObservableSample', 'runSubscriberSample', 'runObserverSample']) {
+task executeAllSamples(dependsOn: ['runSingleSample', 'runObservableSample',
+                                   'runSubscriberSample', 'runObserverSample']) {
   description = 'Run all samples for all the annotations available within Aragorn.'
 }

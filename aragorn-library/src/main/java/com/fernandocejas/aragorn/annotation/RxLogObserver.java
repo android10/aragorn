@@ -7,6 +7,6 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.CLASS;
 
 @Retention(CLASS)
-@Target({TYPE})
+@Target({ TYPE })
 public @interface RxLogObserver {
 }
