@@ -2,15 +2,14 @@ package com.fernandocejas.aragorn.runtime;
 
 import com.fernandocejas.aragorn.annotation.RxLogObservable;
 import com.fernandocejas.aragorn.annotation.RxLogSubscriber;
-
-import javax.annotation.processing.ProcessingEnvironment;
-import javax.lang.model.element.Element;
-import javax.tools.Diagnostic;
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import javax.annotation.processing.ProcessingEnvironment;
+import javax.lang.model.element.Element;
+import javax.tools.Diagnostic;
 
 abstract class AnnotationHandler {
     abstract void process(ProcessingEnvironment processingEnvironment, Element element);

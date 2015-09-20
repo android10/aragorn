@@ -1,7 +1,6 @@
 package com.fernandocejas.aragorn.runtime;
 
 import com.fernandocejas.aragorn.annotation.RxLogObservable;
-
 import java.util.Set;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.lang.model.element.Element;

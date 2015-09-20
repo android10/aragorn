@@ -2,7 +2,8 @@ package com.fernandocejas.aragorn.runtime;
 
 import com.fernandocejas.aragorn.runtime.util.VisibleForTesting;
 import com.google.auto.service.AutoService;
-
+import java.lang.annotation.Annotation;
+import java.util.Set;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
@@ -10,8 +11,6 @@ import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
-import java.lang.annotation.Annotation;
-import java.util.Set;
 
 @SuppressWarnings("unused")
 @AutoService(Processor.class)

@@ -1,13 +1,12 @@
 package com.fernandocejas.sample.aragorn;
 
 import com.fernandocejas.aragorn.annotation.RxLogSingle;
+import java.util.Arrays;
+import java.util.List;
 import rx.Single;
 import rx.Subscriber;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
-
-import java.util.Arrays;
-import java.util.List;
 
 class SingleSample extends Sample {
     @Override
